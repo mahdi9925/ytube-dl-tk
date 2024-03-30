@@ -5,14 +5,11 @@ def downloader(url):
     pass
 
 
-def check_internet_connection():
-    url = "https://google.com"
+def check_internet_connection(queue):
+    url = "https://www.wikipedia.org/"
     try:
         response = requests.get(url)
-        return response.status_code
+        result = f"HTTP STATUS : {response.status_code} | Connection established"
+        queue.put(result)
     except requests.exceptions.ConnectionError:
-        return "No internet connection"
-
-
-n = check_internet_connection()
-print(n)
+        queue.put("No internet connection")
