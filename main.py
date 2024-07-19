@@ -1,10 +1,10 @@
 import requests
 
-
+# ? This function is for download files
 def downloader(url):
     pass
 
-
+# ? This function is for check internet connectivity and if there is an error it will be shown
 def check_internet_connection(queue):
     url = "https://www.google.com/"
     try:
