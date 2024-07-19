@@ -5,7 +5,7 @@ from multiprocessing import Queue
 from multiprocessing import Process
 
 
-# * Main window and its settings
+# ? Main window and its settings
 mw = Tk()  # noqa: F405
 mw.title("YouTube downloader")
 mw.geometry("500x500")
@@ -13,14 +13,14 @@ mw.geometry("500x500")
 url_variable = StringVar()  # noqa: F405
 show_result_connection = StringVar()  # noqa: F405
 
-
+# ? 
 def Check_internet_connection_process():
     queue = Queue()
     print("hello")
     main.check_internet_connection(queue)
     print("queue", queue.get())
 
-
+# ? Send URL to download's function in main.py
 def downloader(url):
     print(url_variable.get())
 
